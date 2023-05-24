@@ -1,0 +1,85 @@
+-]	Creazione progetto -> Implementazione MainActivity -> Primi studi sulla gestione dell'accelerometro e primi test di lettura dati da esso.
+-]	CODE:
+		Aggiunta classe DataBaseManager per la gestione del DB. Aggiunta classe "data" per descrivere l'oggetto da memorizzare nel DB. Meglio file in locale? O scrittura su db?
+		Lettura sul sito kotlin-developers su come interfacciarsi all'accelerometro. Ci sono vari " TYPE di acelerometri " per ottenere la lettura dell'accelerazione (LUNGO I 3 ASSI)
+		Aggiunti bottone InziaSample per il campionamento per la lettura dei valori dell'accelerazione lungo asse z (leggere solo la terza posizione del vettore values dell'oggento event)
+		Per adesso utiliziamo il findViewbyId -> Errori nell'aggiunta dell'import per il Binding -> DA CAPIRE GLI ERRORI E CONVERTIRE TUTTE LE findViewbyId con 
+		il BINDING (Ottimizzazione nella ricerca degli elementi nella view).
+-] NON CODING ACTIVITY:
+		Analisi segnale campionato, non ha la forma che ci aspettiamo. Trattiamo come RVs e calcoliamo la windowAverage con dim 100 su Excell.
+-] NON CODING ACTIVITY:
+		Ricerca online su librerie per il filtraggio del segnale + Filtro passa basso. Trovato ButterWorth ma dobbiamo capire come utilizzarlo.
+-] 	Ricevimento con prof -> DA FARE: 
+	--] Aumentare dimensione finestra per la windowAverage (Prova 150)
+	--] Signal Processing -> Possibili librerie per fltrare i dati
+	--] Non occorre memorizzare su database -> Cancellazione classe DataBaseManager (Non serve) + classe data per la scrittura degli oggetti su db.
+	
+-] NON CODING ACTIVITY:
+		Brainstorming su come poter confrontare il campione di respirazione con un dato pattern.
+		Dividiamo il segnale a blocchi di X-durata e valutiamo singolarmente il punteggi e confrontiamo col pattern quel X-intervallo ? 
+		Utiliziamo una NN per il confronto del segnale campionato col pattern? (Sembra eccessivo)
+		Utiliziamo la derivata per capire discesa/salita del segnale (Peak Detection) ?
+	
+-]	CODE:
+		Aggiunta classe AccelerometerManager per dotare il Main di funzionalità per la gestione dell'accelerometro.
+		Il sampling dei dati viene gestito in modo asincrono rispetto al flusso di esecuzione dell'app tramite l'invocazione del metodo onChanged()
+		Si seleziona solamente la terza componenente dell'array values dell'oggetto event per prelevare solamente la componente Z del sample.
+	
+-]	CODE:
+		Scelta del filtro da applicare al segnale per smussarlo, eliminare gli outlier e eliminare tutte le componenti con frequenza maggiore di 0.25Hz
+		Aggiunta nella classe FilterManager la funzione filterData(), computeHoldIntervals() e scoreBreathing() per il filtraggio dei dati, il calcolo degli
+		intervalli di apnea e per il calcolo del punteggio della sessione.
+
+-]	GUI: All'apertura dell'app si deve selezionare un radio button in base al pattern che si vuole seguire ?
+		Scelta d'implementazione --> Compose VS XML -> Studio e valutazione nell’ultilizzo del tool jetpack composeù
+		Implementazione dell’interfaccia grafica utilizzando jetpack compose. Uitlizzo del componente ViewModel per lo scambio di dati tra i diversi componenti utlizzando jetpack compose
+		Organizzazione dell’accesso ai dati mediante repository utilizzando jetpack compose
+		Studio e implementazione della navigazione utilizzando jetpack compose, implementazione del database utilizzando Room mediante jetpack compose.
+-]	GUI: Compose VS XML 
+		Scelta implementativa su come creare/gestire l'interfaccia grafica dell'app. Abbiamo preferito utilizzare il la "modalità XML".
+-]	GUI -> MainActivity:
+		Aggiunto bottone per iniziare il sampling. DA MIGLIORARE, se l'utente non conosce i pattern ? Inserire qualche immagine/breve info?
+		Miglioramento UI. Inserite 3 imageView, ognuna per il relativo pattern e una label con una breve descrizione.
+		Inserimento di 3 Fragment all'interno della MainActivity, ognuno relativo al pattern. (Idea: se si clicca sul fragment, viene aperto un nuovo fragment a cui si passa un parametro
+		che descrive quale fragemnt è stato cliccato.
+		Aprendo un fragment figlio, cliccando sul fragment padre, il figlio eredita le dimensioni del padre e quindi nel nostro caso non va bene. (PROBLEMI, PROBLEMI, PROBLEMI)
+		Abbiamo optato nel generare una nuova activity (SampleActivity) a cui passiamo l'info (attraverso intent.putExtra) del pattern del fragment cliccato.
+		All'apertura quindi la SampleActivity recupera quel valore con la getExtra e di consguenza utilizza il relativo pattern. (VERSIONE DEFINITIVA MainActivity)
+		Aggiunta toolbar con NomeApp + Icona per la calibrazione + menu (per successivi sviluppi).
+-]	GUI: Aggiunta Landscape per la MainActivity -> Modifica elementi per evitare la loro sovrapposizione.
+
+-]	GUI -> SampleActivity:
+		Aggiunta definitiva della SampleActivity -> Aggiunta imageView con il PLAY che cambia resource quando si clicca.
+		Inserire countdown e poi si inizia a campionare?
+		Aggiunta versione Landscape della SampleActivity, gestione degli elemementi grafici che venivano tagliati fuori dall'activity.
+		Aggiunta funzionalità (nella che permette di conservare il valore della calibrazione (calibrationValue) attraverso l'oggetto Bundle dei metodi onSavedInstanceState() e reStoreInstanceState()
+		se, una volta calibrato, si ruota il dispositivo.
+-]	GUI -> SampleActivity: 
+		Aggiunta la TextView textTimer per il countdown implementato nella classe samplingAcvitity (Vedi gestione codice)
+		Aggiunta ProgressBar accanto alla precedente TextView per indicare il campionamento in corso.
+-]	CODE:
+		Aggiunta classe FilterManager per separare le funzionalità di filtraggio da quelle di campionamento.
+		La classe fornisce funzioni che si interfacciano con il filtro ButterWorth per ottenere il segnale filtrato, ed inoltre permette
+		attrevarso la scoreBreathing() di ottenere il punteggio dell'utente dell'attuale sessione di respirazione secondo il pattern selezionato.ù
+		
+-]	GUI -> InfoActivity: 
+		Aggiunta la InfoActivity per avere più info riguardo al pattern di respirazione selezionato.
+		Basta cliccare sul bottone a forma di 'i' in un certo fragment, e si aprirà una nuova activity a cui si passa l'info della pattern... (Esattamente come gestito nel caso della SamplingActivity).		 
+
+-]	CODE:
+	All'interno della classe SampleActivity -> aggiunta gestione del defaultVibratorSensor per far vibrare il telefono nell'istante in cui si inizia la sessione.
+	Gestione dei metodi deprecati (In base all'API del telefono su cui viene eseguita l'app, verrà invocato il metodo corretto)
+	
+-]	GUI -> InfoActivity: 
+	Aggiunta la versione Landscape per gestire la rotazione di questa activity.
+	
+-]	GUI -> SampleActivity: 
+	Aggiunta versione Landscape per poter effettuare la sessione anche in landscape. 
+	Rimpicciolita l'img play perchè su telefoni sotto i 6 pollici, si sovrapponeva con la textView dello score.
+
+-]  LINGUA APP:
+	Aggiunto il file string values per la lingua italiana (con tutte le traduzioni delle stringhe) -> Mettere <item> nel menu per cambiare lingua "programmatically" ?
+    Cambiando la lingua del S.O. viene scelto la lingua opportuna.
+-]	CODE:
+	Implementazione della funzionalità di Binding per l'inflate del XML invece della classica findViewbyId() per ottimizzare la ricerca degli elementi all'interno della view.
+	Pulizia del codice eliminando eventuali bug e warning.
