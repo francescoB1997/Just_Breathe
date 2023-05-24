@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="TextCalibrationPhase">Calibrazione ...</string>
+    <string name="TextCalibrationFailed">Calibrazione fallita.\nNon muovere il telefono</string>
+    <string name="TextCalibrationSuccess">Calibrazione completata</string>
+
+    <string name="itemCalibration">Calibrazione</string>
+
+    <string name="toolbarSamplingTitle">Respirazione</string>
+    <string name="toolbarInfoTitle">Informazioni sulla</string>
+
+    <string name="lbl1Fragment404">La respirazione 4-0-4 aiuta\na rilassarti e concentrarti</string>
+    <string name="lbl1Fragment478">La respirazione 4-7-8 favorisce\ne migliola la qualità del sonno</string>
+    <string name="lbl1Fragment444">La respirazione 4-4-4 riduce\nil flusso dei pensieri</string>
+    <string name="lblScoreTextStart">Score: Premi PLAY per iniziare!</string>
+
+    <string name="descriptionIcon478">Icona che dorme</string>
+    <string name="desctiptionIcon404">Icona rilassata</string>
+    <string name="desctiptionIcon444">Icona che fa yoga</string>
+    <string name="descriptionInfoButton404">Bottone Info 4-0-4</string>
+    <string name="descriptionInfoButton444">Bottone Info 4-4-4</string>
+    <string name="descriptionInfoButton478">Bottone Info 4-7-8</string>
+
+    <string name="msgSampleError">"Respira per più tempo"</string>
+
+    <string name="infoPattern404">La respirazione 4-0-4, nota anche come Sama-Vritti, si riferisce ad una respirazione in cui inspirazione ed espirazione hanno la stessa durata di tempo che ha origine dall\'antica pratica del pranayama yoga. Puoi praticare questo esercizio quando ti senti a disagio.</string>
+    <string name="infoPattern478">La respirazione 4-7-8, nota anche come Respirazione Rilassante, è un modello sviluppato dal Dr. Weil Andrew. Questo modello mira a ridurre l\'ansia ed aiutare le persone ad addormentarsi. Molte testimonianze affermano che questo tipo direspirazione profonda sia efficace nel prendere sonno prima. Si consiglia di non ripetere questa respirazione per più di 2 volte al giorno durante il primo mese di pratica. Se ci si sente storditi o si accusano giramenti di testa, si consiglia di interrompere l\'esercizio.</string>
+    <string name="infoPattern444">La respirazione 4-4-4 può aiutare a curare l\'insonnia calmano i nervi prima di andare a letto. Questa tecnica è utile anche per riequilibrarsi. Può anche essere utilizzata per calmarsi in seguito ad un momento\ndi eccessivo stress, come un discorso pubblico.</string>
+
+    <string name="textDevelopers">Just Breathe - Sviluppata da \nIngg. Bruno-Sferrazza-Picchi-Tonelli \n2023</string>
+</resources>

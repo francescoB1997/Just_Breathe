@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_green">#90eeBE</color>
+    <color name="light_blue">#add8e6</color>
+    <color name="light_gray">#B0B0B0</color>
+    <color name="deep_purple">#673ab7</color>
+    <color name="black">#000000</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="orange_1">#FFB802</color>
+    <color name="yellow">#FBE928</color>
+
+
+    <array name="colors_hex_code">
+        <item>@color/light_green</item>
+        <item>@color/light_blue</item>
+        <item>@color/light_gray</item>
+        <item>@color/deep_purple</item>
+        <item>@color/black</item>
+        <item>@color/pure_white</item>
+        <item>@color/orange_1</item>
+        <item>@color/yellow</item>
+    </array>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/fragment4782">
+
+    <fragment
+        android:id="@+id/fragment4782"
+        android:name="com.bstp.justbreathe.fragment478"
+        android:label="fragment_fragment478"
+        tools:layout="@layout/fragment478" >
+        <action
+            android:id="@+id/action_fragment4782_to_samplingActivity2"
+            app:destination="@id/samplingActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/samplingActivity2"
+        android:name="com.bstp.justbreathe.SamplingActivity"
+        android:label="sampling_activity"
+        tools:layout="@layout/sampling_activity" />
+</navigation>

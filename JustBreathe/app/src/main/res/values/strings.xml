@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name" translatable="false">Just Breathe</string>
+
+    <string name="TextCalibrationPhase">Calibration ...</string>
+    <string name="TextCalibrationFailed">Calibration failed.\nDon\'t move the smartphone</string>
+    <string name="TextCalibrationSuccess">Calibration completed</string>
+    <string name="itemCalibration">Calibration</string>
+    <string name="itemAbout" translatable="false">© Just Breathe ©</string>
+
+    <string name="toolbarSamplingTitle">Breathing</string>
+    <string name="toolbarInfoTitle">Info about</string>
+
+    <string name="lbl1Fragment404">Breathing 4–0–4 helps you\nrelax and concentrate</string>
+    <string name="lbl1Fragment478">Breathing 4–7–8 promotes\nthe quality of sleep</string>
+    <string name="lbl1Fragment444">Breathing 4–4–4 lightens\nthe flow of thoughts</string>
+    <string name="lblScoreTextStart">Score: Press PLAY to start!</string>
+    <string name="lblScoreTextScore" translatable="false">Score: %1$s</string>
+
+    <string name="descriptionIcon478">Sleeping icon</string>
+    <string name="desctiptionIcon404">Relaxing icon</string>
+    <string name="desctiptionIcon444">Yoga icon</string>
+    <string name="descriptionInfoButton404">Info button 4-0-4</string>
+    <string name="descriptionInfoButton444">Info Button 4-4-4</string>
+    <string name="descriptionInfoButton478">Info button 4-7-8</string>
+
+    <string name="msgSampleError">"Breathe for longer time"</string>
+
+    <string name="infoPattern404">Breathing 4-0-4, also known as Sama-Vritti, refers to breathing in which inhalation and exhalation are the same length of time and originates from the ancient practice of pranayama yoga.</string>
+    <string name="infoPattern478">Breathing 4-7-8, also known as Relaxing Breathing, is a model developed by Dr. Weil Andrew. This model aims to reduce anxiety and help people fall asleep. Many testimonials claim that this type of deep breathing is effective in getting to sleep earlier. It is recommended not to repeat this breathing pattern more than twice a day during the first month of practice.</string>
+    <string name="infoPattern444">Breathing 4-4-4 can help cure insomnia by calming the nerves before going to bed. This technique is also useful for rebalancing. It can also be used to calm oneself following a moment of excessive stress, such as a public speech.</string>
+
+    <string name="textDevelopers">Just Breathe - Developed by \nEngs Bruno-Sferrazza-Picchi-Tonelli \n2023</string>
+
+    <string name="PATTERN_404" translatable="false">4-0-4</string>
+    <string name="PATTERN_444" translatable="false">4-4-4</string>
+    <string name="PATTERN_478" translatable="false">4-7-8</string>
+</resources>
