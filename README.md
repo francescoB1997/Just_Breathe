@@ -37,7 +37,7 @@ implementation ('com.github.psambit9791:jdsp:2.0.1') {
 6. Enjoy the Application!
 
 ## App Installer
-An other option to use directily the app in your Android Smartphone is download the apk of JustBreathe located in **"JustBreathe/apk"** folder, then install it.
+Another option to use directily the app in your Android Smartphone is download the apk of JustBreathe located in **"JustBreathe/apk"** folder, then install it.
 
 ## How to interact with JustBreathe App
 
